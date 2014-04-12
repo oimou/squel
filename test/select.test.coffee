@@ -60,9 +60,6 @@ test['SELECT builder'] =
       assert.same [block], @inst.blocks
 
   'build query':
-    'need to call from() first': ->
-      assert.throws (=> @inst.toString()), 'from() needs to be called'
-
     '>> from(table).from(table2, alias2)':
       beforeEach: -> @inst.from('table').from('table2', 'alias2')
       toString: ->

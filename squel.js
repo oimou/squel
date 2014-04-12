@@ -542,7 +542,7 @@ OTHER DEALINGS IN THE SOFTWARE.
     FromTableBlock.prototype.buildStr = function(queryBuilder) {
       var tables;
       if (0 >= this.tables.length) {
-        throw new Error("from() needs to be called");
+        return '';
       }
       tables = FromTableBlock.__super__.buildStr.call(this, queryBuilder);
       return "FROM " + tables;
