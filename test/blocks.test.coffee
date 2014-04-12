@@ -267,13 +267,6 @@ test['Blocks'] =
         assert.ok baseMethodSpy.calledWithExactly('table2', 'alias2')
 
     'buildStr()':
-      'requires at least one table to have been provided': ->
-        try
-          @inst.buildStr()
-          throw new Error 'should not reach here'
-        catch err
-          assert.same 'Error: from() needs to be called', err.toString()
-
       'calls base class handler': ->
         baseMethodSpy = test.mocker.stub squel.cls.AbstractTableBlock.prototype, 'buildStr', -> 'blah'
 

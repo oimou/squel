@@ -499,7 +499,7 @@ class cls.FromTableBlock extends cls.AbstractTableBlock
     @_table(table, alias)
 
   buildStr: (queryBuilder) ->
-    if 0 >= @tables.length then throw new Error "from() needs to be called"
+    if 0 >= @tables.length then return ''
 
     tables = super queryBuilder
 
